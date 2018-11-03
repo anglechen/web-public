@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<!-- <bean  id="userDao" class="com.server.dao.impl.UserDaoImpl"></bean>
+		
+		
+	<bean id="userService" class="com.server.service.impl.UserServiceImpl">
+		<property name="userDao" ref="userDao"></property>
+	</bean> -->
+	
+	<!-- 开启自动扫描 -->
+	<context:component-scan base-package="com.server"></context:component-scan>
+	
+	
+</beans>
