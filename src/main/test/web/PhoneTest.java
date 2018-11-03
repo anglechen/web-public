@@ -8,7 +8,7 @@ import com.test.web.card.Unicom;
 import com.test.web.phone.Iphone;
 import com.test.web.phone.Moto;
 import com.test.web.phone.Nokia;
-
+//测试类
 public class PhoneTest {
 	
 	public static void main(String[] args) {
