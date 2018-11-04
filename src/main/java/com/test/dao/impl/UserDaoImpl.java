@@ -13,7 +13,6 @@ import org.apache.commons.beanutils.BeanUtils;
 
 import com.test.dao.UserDao;
 import com.test.domain.User;
-import com.test.utils.ConverUtil;
 import com.test.utils.JdbcUtil;
 
 /**
