@@ -15,7 +15,9 @@ public class UserDaoImplTest {
 	public void testAdd() {
 		UserDao userDao = new UserDaoImpl();
 		User user = new User();
-		user.setAccount("admin").setPassword("123456").setAge(18);
+		user.setAccount("admin");
+		user.setPassword("123456");
+		user.setAge(18);
 		userDao.add(user);
 	}
 
@@ -23,7 +25,10 @@ public class UserDaoImplTest {
 	public void testMod() {
 		UserDao userDao = new UserDaoImpl();
 		User user = new User();
-		user.setAccount("test").setPassword("test").setAge(18).setId(2);
+		user.setAccount("test");
+		user.setPassword("test");
+		user.setAge(18);
+		user.setId(2);
 		userDao.mod(user);
 	}
 

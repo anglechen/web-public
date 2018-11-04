@@ -13,6 +13,7 @@ import org.apache.commons.beanutils.BeanUtils;
 
 import com.test.dao.UserDao;
 import com.test.domain.User;
+import com.test.utils.ConverUtil;
 import com.test.utils.JdbcUtil;
 
 /**
@@ -58,10 +59,10 @@ public class UserDaoImpl implements UserDao {
 		String sql = "select * from user";
 		List<Map<String, String>> results = JdbcUtil.executeQuery(sql);
 		List<User>  returnUsers = new ArrayList<>();
-		for (Map<String, String> m : results) {
+		for (Map<String,String> m : results) {
 			User tmpUser = new User();
 			try {
-				BeanUtils.populate(tmpUser, m);
+				BeanUtils.copyProperties(tmpUser, m);
 			} catch (IllegalAccessException | InvocationTargetException e) {
 				e.printStackTrace();
 			}
