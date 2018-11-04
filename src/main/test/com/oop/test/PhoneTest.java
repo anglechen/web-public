@@ -1,13 +1,13 @@
-package web;
+package com.oop.test;
 
-import com.test.web.Phone;
-import com.test.web.card.CardService;
-import com.test.web.card.Mobie;
-import com.test.web.card.Telecom;
-import com.test.web.card.Unicom;
-import com.test.web.phone.Iphone;
-import com.test.web.phone.Moto;
-import com.test.web.phone.Nokia;
+import com.test.oop.Phone;
+import com.test.oop.card.CardService;
+import com.test.oop.card.Mobie;
+import com.test.oop.card.Telecom;
+import com.test.oop.card.Unicom;
+import com.test.oop.phone.Iphone;
+import com.test.oop.phone.Moto;
+import com.test.oop.phone.Nokia;
 //测试类
 public class PhoneTest {
 	
