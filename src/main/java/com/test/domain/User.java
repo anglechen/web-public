@@ -22,5 +22,5 @@ public class User {
   private Date modTime;
   private String modUser;
   private Integer delFlag;
-
-}
+  
+ }

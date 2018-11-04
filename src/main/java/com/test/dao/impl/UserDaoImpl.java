@@ -1,5 +1,9 @@
 package com.test.dao.impl;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
 
 import com.test.dao.UserDao;
@@ -14,7 +18,40 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public void add(User user) {
-		// TODO Auto-generated method stub
+		
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		String url = "jdbc:mysql://127.0.0.1:3306/web-public";
+		String name = "root";
+		String password = "123456";
+		String sql = "insert into user(name) values('test')";
+		
+		Connection conn = null;
+		Statement statement =null;
+		try {
+			conn = DriverManager.getConnection(url, name, password);
+			statement = conn.createStatement();
+			statement.execute(sql);
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				statement.close();
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			
+		}
+		
+		
+		
+		
+		
 		
 	}
 
