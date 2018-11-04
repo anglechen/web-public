@@ -1,4 +1,4 @@
-package com.test.web;
+package com.test.oop;
 
 public class Test {
 

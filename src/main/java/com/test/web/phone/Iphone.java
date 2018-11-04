@@ -1,6 +1,6 @@
 package com.test.web.phone;
 
-import com.test.web.Phone;
+import com.test.oop.Phone;
 import com.test.web.inter.Blooth;
 import com.test.web.inter.Wifi;
 
