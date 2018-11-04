@@ -1,4 +1,4 @@
-package com.test.web.inter;
+package com.test.oop.inter;
 
 public interface Blooth {
 	

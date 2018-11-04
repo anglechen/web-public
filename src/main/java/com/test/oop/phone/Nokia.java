@@ -1,7 +1,7 @@
-package com.test.web.phone;
+package com.test.oop.phone;
 
 import com.test.oop.Phone;
-import com.test.web.inter.Wifi;
+import com.test.oop.inter.Wifi;
 
 public class Nokia extends Phone implements Wifi {
 

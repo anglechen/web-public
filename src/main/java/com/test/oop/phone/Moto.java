@@ -1,7 +1,7 @@
-package com.test.web.phone;
+package com.test.oop.phone;
 
 import com.test.oop.Phone;
-import com.test.web.inter.Blooth;
+import com.test.oop.inter.Blooth;
 
 public class Moto extends Phone implements Blooth {
 

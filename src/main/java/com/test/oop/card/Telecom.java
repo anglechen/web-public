@@ -1,4 +1,4 @@
-package com.test.web.card;
+package com.test.oop.card;
 
 public class Telecom implements CardService {
 

@@ -1,6 +1,6 @@
 package com.test.oop;
 
-import com.test.web.card.CardService;
+import com.test.oop.card.CardService;
 
 import lombok.Data;
 
