@@ -6,6 +6,8 @@ import java.util.List;
 
 import org.junit.Test;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.test.dao.UserDao;
 import com.test.domain.User;
 
@@ -42,6 +44,7 @@ public class UserDaoImplTest {
 
 	@Test
 	public void testQuery() {
+	
 		UserDao userDao = new UserDaoImpl();
 		User user = new User();
 		List<User> lists = userDao.query(user);

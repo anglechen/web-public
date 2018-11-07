@@ -1,16 +1,11 @@
 package com.test.dao.impl;
 
-import java.lang.reflect.InvocationTargetException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.beanutils.BeanUtils;
-
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.test.dao.UserDao;
 import com.test.domain.User;
 import com.test.utils.JdbcUtil;
@@ -59,12 +54,8 @@ public class UserDaoImpl implements UserDao {
 		List<Map<String, String>> results = JdbcUtil.executeQuery(sql);
 		List<User>  returnUsers = new ArrayList<>();
 		for (Map<String,String> m : results) {
-			User tmpUser = new User();
-			try {
-				BeanUtils.copyProperties(tmpUser, m);
-			} catch (IllegalAccessException | InvocationTargetException e) {
-				e.printStackTrace();
-			}
+			//通过json的方式把map转换为json，然后再把json对象转换为javabean
+			User tmpUser =  JSONObject.toJavaObject((JSON)JSON.toJSON(m), User.class);
 			returnUsers.add(tmpUser);
 		}
 		return returnUsers;
