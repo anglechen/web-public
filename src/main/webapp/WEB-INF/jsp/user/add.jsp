@@ -22,7 +22,7 @@
 					for="form-field-1"> 姓名 </label>
 
 				<div class="col-sm-4">
-					<input type="text" name="userName" id="userName" placeholder="请输入姓名"
+					<input type="text" name="account" id=""account"" placeholder="请输入姓名"
 						class="col-xs-12 col-sm-12" />
 				</div>
 				<label class="col-sm-2 control-label no-padding-right"

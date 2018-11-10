@@ -19,10 +19,11 @@ import com.test.service.impl.UserServiceImpl;
 @WebServlet("/users/list")
 public class UserServlet extends HttpServlet {
 
+
 	private UserService userService = new UserServiceImpl();
 	
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		resp.setCharacterEncoding("utf-8");
 		PrintWriter print = resp.getWriter();
 		List<User> users = userService.query(new User());
@@ -32,6 +33,14 @@ public class UserServlet extends HttpServlet {
 		resp.setContentType("application/json,charset=utf-8");
 		print.write(jsonObject.toJSONString());
 	}
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		doPost(req,resp);
+	}
+	
+	
+	
 	
 	
 }

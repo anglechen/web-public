@@ -211,7 +211,7 @@ td, th {
 							 return;
 						 }
 						 $.ajax({
-							 url:"<%=basePath%>/user",
+							 url:"<%=basePath%>/users/add",
 							 async:false,
 							 type:"post",
 							 data:data,
