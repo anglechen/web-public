@@ -2,33 +2,35 @@ package com.test.service.impl;
 
 import java.util.List;
 
+import com.test.dao.UserDao;
+import com.test.dao.impl.UserDaoImpl;
 import com.test.domain.User;
 import com.test.service.UserService;
 
 public class UserServiceImpl implements UserService {
 
+	private UserDao userDao = new UserDaoImpl();
+	
 	@Override
 	public void add(User user) {
-		// TODO Auto-generated method stub
-		
+		userDao.add(user);
 	}
 
 	@Override
 	public void mod(User user) {
-		// TODO Auto-generated method stub
+		userDao.mod(user);
 		
 	}
 
 	@Override
 	public void del(User user) {
-		// TODO Auto-generated method stub
+		userDao.del(user);
 		
 	}
 
 	@Override
 	public List<User> query(User user) {
-		// TODO Auto-generated method stub
-		return null;
+		return userDao.query(user);
 	}
 
 	@Override
