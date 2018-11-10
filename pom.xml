@@ -47,19 +47,14 @@
   		<artifactId>fastjson</artifactId>
   		<version>1.2.48</version>
   	</dependency>
+  	<dependency>
+  		<groupId>commons-beanutils</groupId>
+  		<artifactId>commons-beanutils</artifactId>
+  		<version>1.9.3</version>
+  	</dependency>
   </dependencies>
 
   <build>
     <finalName>web</finalName>
   </build>
-  <plugin>
-       <artifactId>maven-compiler-plugin</artifactId>
-       <version>3.3</version>
-       <configuration>
-           <source>1.8</source>
-           <target>1.8</target>
-           <encoding>utf-8</encoding>
-       </configuration>
-</plugin>
-
 </project>

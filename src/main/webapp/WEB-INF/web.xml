@@ -4,6 +4,19 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+	
+	
+	<!-- 配置一个名称 为：userServlet的servlet对象 -->
+	<!-- <servlet>
+		<servlet-name>userServlet</servlet-name>
+		<servlet-class>com.test.servlet.UserServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>userServlet</servlet-name>
+		<url-pattern>/user</url-pattern>
+	</servlet-mapping> -->
+	
 	<welcome-file-list>
 		<welcome-file>hello.jsp</welcome-file>
 	</welcome-file-list>
