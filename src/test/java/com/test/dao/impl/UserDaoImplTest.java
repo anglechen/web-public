@@ -2,6 +2,7 @@ package com.test.dao.impl;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Test;
@@ -55,6 +56,39 @@ public class UserDaoImplTest {
 
 	@Test
 	public void testLogin() {
+		UserDao userDao = new UserDaoImpl();
+		User user = new User();
+		user.setAccount("abc' or '1'='1");
+		user.setPassword("e10adc3949ba59abbe56e057f20f883e");
+		int count = userDao.login(user);
+		System.out.println(count);
+	}
+	
+	@SuppressWarnings("unchecked")
+	public static void main(String[] args){
+		
+		@SuppressWarnings("rawtypes")
+		List list = new ArrayList<>();
+		list.add("22");
+		list.add(122);
+		try {
+			test();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public static void test()  throws Exception {
+		try {
+			int i = 1/0;
+		} catch (Exception e) {
+//			System.out.println("除数不能为0");
+			throw new Exception("除数不能为0");
+		}
+		System.out.println("end");
+		throw new Exception("除数不能为0");
+		
 	}
 
 }

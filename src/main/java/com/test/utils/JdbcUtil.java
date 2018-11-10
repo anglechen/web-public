@@ -11,6 +11,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.mysql.jdbc.PreparedStatement;
+
 public class JdbcUtil {
 	
 	//静态块，类加载的时候只会执行一次
@@ -55,11 +57,17 @@ public class JdbcUtil {
 		Connection conn = null;
 		Statement statement =null;
 		ResultSet resultSet = null;
+		PreparedStatement preStatement = null;
 //		保存所有行数据
 		List<Map<String, String>> results = new ArrayList<>();
 		try {
 			conn = getConnection();
 			statement = conn.createStatement();
+			//防止sql注入
+			//select count(1) from user where account = ? and password = ?
+//			preStatement = conn.prepareStatement(sql);
+//			preStatement.setString(1, "admin");
+//			preStatement.setString(2, "123456");
 			//结果集
 			resultSet = statement.executeQuery(sql);
 			//结果集对应表的元数据信息
@@ -110,7 +118,7 @@ public class JdbcUtil {
 		try {
 			statement.close();
 			conn.close();
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}

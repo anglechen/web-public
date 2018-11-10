@@ -13,6 +13,7 @@ import com.test.utils.JdbcUtil;
 /**
  * 用户数据库的操作类
  * @author Administrator
+ * 省略--动态sql条件构建（需要自己去拼接sql语句）  
  *
  */
 public class UserDaoImpl implements UserDao {
@@ -63,8 +64,22 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public int login(User user) {
-		// TODO Auto-generated method stub
-		return 0;
+		String sql = "select count(1) as userCount from user"
+				+ " where account = '" + user.getAccount() +"' and password = '"
+				+user.getPassword() +"'";
+		//省略了null判断
+		List<Map<String, String>> results = JdbcUtil.executeQuery(sql);
+		String count = results.get(0).get("userCount");
+		return Integer.parseInt(count);
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }
