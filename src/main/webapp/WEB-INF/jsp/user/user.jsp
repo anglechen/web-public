@@ -76,7 +76,7 @@ td, th {
 			var userTable = $('#userTable').DataTable( {
 		        /* "data": users, */
 		        "ajax":{
-		        	"url":"<%=basePath%>/user",
+		        	"url":"<%=basePath%>/users/list",
 		        	"data":function(){
 		        		var data =  getFormData("#search-form");
 		        		data.tdata = true;
@@ -94,7 +94,13 @@ td, th {
 		                    return "<input type='checkbox' value="+ row.id+">";
 		                }  
 		        	},
-		            { "data": "userName" },
+		            { "data": "account" ,
+		            	render : function(data, type, row, meta) {  
+		                    // 显示行号  
+		                    if(row.account)return row.account;
+		                    return "";
+		                } 
+		        	},
 		            { "data": "sex",
 		            	render : function(data, type, row, meta) {  
 		                    // 显示行号  
@@ -102,9 +108,27 @@ td, th {
 		                    return "女";
 		                } 
 		            },
-		            { "data": "age" },
-		            { "data": "addr" },
-		            { "data": "remarks" }
+		            { "data": "age" ,
+		            	render : function(data, type, row, meta) {  
+		                    // 显示行号  
+		                    if(row.age)return row.age;
+		                    return "";
+		                }  
+		            },
+		            { "data": "addr" ,
+			            	render : function(data, type, row, meta) {  
+			                    // 显示行号  
+			                    if(row.addr)return row.addr;
+			                    return "";
+			                } 
+		                },
+		            { "data": "remarks"  ,
+		            	render : function(data, type, row, meta) {  
+		                    // 显示行号  
+		                    if(row.remarks)return row.remarks;
+		                    return "";
+		                }
+			         }
 		        ],
 		        columnDefs: [ {
 		            orderable: false,
