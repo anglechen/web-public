@@ -183,8 +183,8 @@ td, th {
 				}
 				//发删除请求
 				 $.ajax({
-					 url:"<%=basePath%>/user",
-					 type:"delete",
+					 url:"<%=basePath%>/users/del",
+					 type:"post",
 					 data:{
 						 ids:rs.toString()
 					 },

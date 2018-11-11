@@ -55,6 +55,20 @@
 						class="col-xs-12" />
 				</div>
 			</div>
+			
+			<div class="space-4"></div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label no-padding-right"
+					for="form-field-1"> 密码 </label>
+
+				<div class="col-sm-4">
+					<input type="password" name="password" id="password" placeholder=" 请输入密码 "
+						class="col-xs-12" />
+				</div>
+				
+			</div>
+
 
 			<div class="space-4"></div>
 			<div class="form-group">
