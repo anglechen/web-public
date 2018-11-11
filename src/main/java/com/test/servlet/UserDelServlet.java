@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.alibaba.fastjson.JSONObject;
 import com.test.domain.User;
+import com.test.listener.InitListener;
 import com.test.service.UserService;
 import com.test.service.impl.UserServiceImpl;
 
@@ -29,6 +30,8 @@ public class UserDelServlet extends HttpServlet {
 			user.setId(Integer.parseInt(i));
 			userService.del(user);
 		}
+		//更新缓存
+		InitListener.userCache = null;
 		
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("result", "success");

@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.alibaba.fastjson.JSONObject;
 import com.test.domain.User;
+import com.test.listener.InitListener;
 import com.test.service.UserService;
 import com.test.service.annotation.Test;
 import com.test.service.impl.UserServiceImpl;
@@ -26,7 +27,17 @@ public class UserServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		resp.setCharacterEncoding("utf-8");
 		PrintWriter print = resp.getWriter();
-		List<User> users = userService.query(new User());
+		//获取缓存的用户信息，可以在此处直接调用缓存
+		List<User> users = InitListener.userCache;
+		//如果没有缓存就需要查询数据库
+		if(users == null || users.size() == 0) {
+			System.out.println("从数据库查询用户信息");
+			users = userService.query(new User());
+			InitListener.userCache = users;
+		}
+		
+		
+		
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("count", users.size());
 		jsonObject.put("data", users);

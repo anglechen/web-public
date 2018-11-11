@@ -17,6 +17,7 @@ import org.apache.commons.beanutils.BeanUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.test.domain.User;
+import com.test.listener.InitListener;
 import com.test.service.UserService;
 import com.test.service.impl.UserServiceImpl;
 
@@ -44,6 +45,8 @@ public class UserAddServlet extends HttpServlet{
 		}
 //		JSONObject.toJavaObject((JSONObject)JSONObject.toJSON(parameters), User.class);
 		userService.add(user);
+		//更新缓存
+		InitListener.userCache = null;
 		
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("result", "success");

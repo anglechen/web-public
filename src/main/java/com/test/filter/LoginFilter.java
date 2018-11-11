@@ -17,7 +17,7 @@ public class LoginFilter implements Filter {
 
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
-		
+		System.out.println("这里是过滤器的初始化");
 	}
 
 	@Override
@@ -37,7 +37,7 @@ public class LoginFilter implements Filter {
 
 	@Override
 	public void destroy() {
-		
+		System.out.println("这里是过滤器的消销毁动作");
 	}
 
 }
